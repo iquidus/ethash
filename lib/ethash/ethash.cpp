@@ -357,7 +357,7 @@ extern "C" {
 ethash_hash256 ethash_calculate_epoch_seed(int epoch_number) noexcept
 {
     ethash_hash256 epoch_seed = {};
-    for (int i = 0; i < epoch_number; ++i)
+    for (int i = 0; i < epoch_number*2; ++i)
         epoch_seed = ethash_keccak256_32(epoch_seed.bytes);
     return epoch_seed;
 }
